@@ -26,7 +26,7 @@ public class DSL {
 	public String obterValorCampo(String idCampo) {
 		return DriverFactory.getDriver().findElement(By.id(idCampo)).getAttribute("value");
 	}
-	
+
 	// Radio buttons e Checkboxes 
 	public void clicarRadio(String id) {
 		DriverFactory.getDriver().findElement(By.id(id)).click();
@@ -110,10 +110,10 @@ public class DSL {
 		return DriverFactory.getDriver().getTitle();
 	}
 	
-	public boolean obterClasse(String classe) {
-		return DriverFactory.getDriver().findElement(By.tagName(classe)).getText().contains("body");
+	public String obterClasse(String classe) {
+		return DriverFactory.getDriver().findElement(By.tagName(classe)).getText();
 	}
-//	Assert.assertTrue(DriverFactory.getDriver().findElement(By.className("_9ay7")).getText().contains(msg));
+
     // Alertas 
 	public String alertaObterTexto(){
 		Alert alert = DriverFactory.getDriver().switchTo().alert();

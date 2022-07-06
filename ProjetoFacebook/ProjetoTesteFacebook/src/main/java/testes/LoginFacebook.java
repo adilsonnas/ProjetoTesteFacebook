@@ -15,6 +15,7 @@ import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import drivers.DriverFactory;
@@ -54,11 +55,11 @@ public class LoginFacebook {
 //			{"123456abcdefg@tfbnw.net","lgrwu137331","O email que você inseriu não está conectado a uma conta."},
 //			{"gvbnqzi_romanberg_1629413798@tfbnw.net","lgrwu13733","A senha inserida está incorreta."},
 //			{"gvbnqzi_romanberg_1629413798@tfbnw.net","grwu137331","A senha inserida está incorreta."},
-//			{"vbnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331",""},
-//			{"bnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331",""},
-//			{"nqzi_romanberg_1629413798@tfbnw.net","lgrwu137331",""},
+//			{"vbnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331","Compartilhe uma foto ou escreva algo."},
+//			{"bnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331","Compartilhe uma foto ou escreva algo."},
+			{"nqzi_romanberg_1629413798@tfbnw.net","lgrwu137331","Compartilhe uma foto ou escreva algo."},
 //			{"romanberg_1629413798@tfbnw.net","lgrwu137331","O email que você inseriu não está conectado a uma conta."},
-			{"gvbnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331","Compartilhe uma foto ou escreva algo."}
+//			{"gvbnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331","Compartilhe uma foto ou escreva algo."}
 		});
 	}
 	
@@ -67,9 +68,9 @@ public class LoginFacebook {
 		page.setEmail(email);
 		page.setSenha(senha);
 		page.cadastrar();
-//		Assert.assertTrue(dsl.obterClasse(msg));
+		Assert.assertTrue(dsl.obterClasse("body").contains(msg));
 //		Assert.assertTrue(DriverFactory.getDriver().findElement(By.className("_9ay7")).getText().contains(msg));
-		Assert.assertTrue(DriverFactory.getDriver().findElement(By.tagName("body")).getText().contains(msg));
+//		Assert.assertTrue(DriverFactory.getDriver().findElement(By.tagName("body")).getText().contains(msg));
 		
 		@SuppressWarnings("unused")
 		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 60);
