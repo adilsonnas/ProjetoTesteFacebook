@@ -3,8 +3,11 @@ package dsl;
 import java.util.ArrayList;
 import java.util.List;
 import drivers.DriverFactory;
+
+import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -102,6 +105,15 @@ public class DSL {
 		return obterTexto(By.id(id));
 	}
 	
+	// Titulo
+	public String obterTitulo() {
+		return DriverFactory.getDriver().getTitle();
+	}
+	
+	public boolean obterClasse(String classe) {
+		return DriverFactory.getDriver().findElement(By.tagName(classe)).getText().contains("body");
+	}
+//	Assert.assertTrue(DriverFactory.getDriver().findElement(By.className("_9ay7")).getText().contains(msg));
     // Alertas 
 	public String alertaObterTexto(){
 		Alert alert = DriverFactory.getDriver().switchTo().alert();
@@ -113,4 +125,5 @@ public class DSL {
 		alert.accept();
 		return valor;
 	}
+
 }
