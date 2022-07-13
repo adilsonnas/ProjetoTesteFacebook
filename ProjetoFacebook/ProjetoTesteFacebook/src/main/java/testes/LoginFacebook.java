@@ -26,7 +26,6 @@ import page.LoginPage;
 public class LoginFacebook {
 
 	private LoginPage page;
-	private WebDriver driver;
 	private DSL dsl;
 	
 	@Parameter
@@ -35,8 +34,6 @@ public class LoginFacebook {
 	public String senha;
 	@Parameter(value=2)
 	public String msg;
-//	@Parameter(value=3)
-//	public String pais;
 	
 	@Before
 	public void inicializar() {
@@ -48,18 +45,12 @@ public class LoginFacebook {
 	@Parameters
 	public static Collection<Object[]> getCollection() {
 		return Arrays.asList(new Object[][] {
-//			{"","","O email ou o número de celular que você inseriu não está conectado a uma conta."},
-//			{"gvbnqzi_romanberg_1629413798@tfbnw.net","","A senha inserida está incorreta."},
-//			{"gvbnqzi_romanberg_1629413798@tfbnw.net","123456abc","A senha inserida está incorreta."},
-//			{"","lgrwu137331","O email ou o número de celular que você inseriu não está conectado a uma conta."},
-//			{"123456abcdefg@tfbnw.net","lgrwu137331","O email que você inseriu não está conectado a uma conta."},
-//			{"gvbnqzi_romanberg_1629413798@tfbnw.net","lgrwu13733","A senha inserida está incorreta."},
-//			{"gvbnqzi_romanberg_1629413798@tfbnw.net","grwu137331","A senha inserida está incorreta."},
-//			{"vbnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331","Compartilhe uma foto ou escreva algo."},
-//			{"bnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331","Compartilhe uma foto ou escreva algo."},
-			{"nqzi_romanberg_1629413798@tfbnw.net","lgrwu137331","Compartilhe uma foto ou escreva algo."},
-//			{"romanberg_1629413798@tfbnw.net","lgrwu137331","O email que você inseriu não está conectado a uma conta."},
-//			{"gvbnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331","Compartilhe uma foto ou escreva algo."}
+			{"","","Credenciais invÃ¡lidas"},
+			{"gvbnqzi_romanberg_1629413798@tfbnw.net","","Credenciais invÃ¡lidas"},
+			{"gvbnqzi_romanberg_1629413798@tfbnw.net","123456abc","Credenciais invÃ¡lidas"},
+			{"","lgrwu137331","Credenciais invÃ¡lidas"},
+			{"123456abcdefg@tfbnw.net","lgrwu137331","Credenciais invÃ¡lidas"},
+			{"gvbnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331","No que vocÃª estÃ¡ pensando, Michael?"}
 		});
 	}
 	
@@ -69,8 +60,6 @@ public class LoginFacebook {
 		page.setSenha(senha);
 		page.cadastrar();
 		Assert.assertTrue(dsl.obterClasse("body").contains(msg));
-//		Assert.assertTrue(DriverFactory.getDriver().findElement(By.className("_9ay7")).getText().contains(msg));
-//		Assert.assertTrue(DriverFactory.getDriver().findElement(By.tagName("body")).getText().contains(msg));
 		
 		@SuppressWarnings("unused")
 		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 60);
