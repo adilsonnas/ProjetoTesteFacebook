@@ -6,7 +6,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import page.BaseTest;
 import page.LoginPage;
 import page.PrincipalPage;
@@ -22,10 +25,12 @@ public class PrincipalFacebook extends BaseTest {
     private WebDriver driver;
     private DSL dsl;
 
-    @Parameterized.Parameter
+    @Parameter
     public String email;
-    @Parameterized.Parameter(value=1)
+    @Parameter(value=1)
     public String senha;
+    @Parameter(value=2)
+    public String msg;
 
     @Before
     public void inicializar() {
@@ -43,7 +48,7 @@ public class PrincipalFacebook extends BaseTest {
 //			{"gvbnqzi_romanberg_1629413798@tfbnw.net","","","", new String[]{},"","Senha nao preenchida."},
 //			{"gvbnqzi_romanberg_1629413798@tfbnw.net","abc","","", new String[]{},"","Confirmacao de senha nao preenchida."},
 //			{"gvbnqzi_romanberg_1629413798@tfbnw.net","abc","abcd","", new String[]{},"","Confirmacao de senha diferente da senha informada."},
-                {"gvbnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331"}
+                {"gvbnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331", "teste de mensagem"}
         });
     }
 
@@ -53,7 +58,11 @@ public class PrincipalFacebook extends BaseTest {
         page.setSenha(senha);
         page.cadastrar();
         principalPage.abrirCadastroPublicacao();
+        principalPage.escreverPublicação();
         principalPage.clicarTextoCadastroPublicacao();
+        
+		@SuppressWarnings("unused")
+		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 20000);
 //        principalPage.escreverCadastroPublicacao();
     }
 }

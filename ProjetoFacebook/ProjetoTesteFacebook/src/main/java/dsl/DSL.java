@@ -23,6 +23,11 @@ public class DSL {
 	public void escrever(String idCampo, String texto){
 		escrever(By.id(idCampo), texto);
 	}
+	
+	public void escreverXpath(By by, String texto) {
+		escrever(By.xpath(texto), texto);
+	}
+	
 	public String obterValorCampo(String idCampo) {
 		return DriverFactory.getDriver().findElement(By.id(idCampo)).getAttribute("value");
 	}
