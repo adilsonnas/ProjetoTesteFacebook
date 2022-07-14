@@ -58,7 +58,7 @@ public class PrincipalFacebook extends BaseTest {
         page.setSenha(senha);
         page.cadastrar();
         principalPage.abrirCadastroPublicacao();
-        principalPage.escreverPublicação();
+        principalPage.escreverPublicacao();
         principalPage.clicarTextoCadastroPublicacao();
         
 		@SuppressWarnings("unused")
