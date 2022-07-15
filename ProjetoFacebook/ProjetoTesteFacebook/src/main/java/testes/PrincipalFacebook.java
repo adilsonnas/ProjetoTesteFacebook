@@ -58,11 +58,8 @@ public class PrincipalFacebook extends BaseTest {
         page.setSenha(senha);
         page.cadastrar();
         principalPage.abrirCadastroPublicacao();
-        principalPage.escreverPublicacao();
-        principalPage.clicarTextoCadastroPublicacao();
-        
-		@SuppressWarnings("unused")
-		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 20000);
+//        principalPage.escreverPublicacao();
+//        principalPage.clicarTextoCadastroPublicacao();
 //        principalPage.escreverCadastroPublicacao();
     }
 }

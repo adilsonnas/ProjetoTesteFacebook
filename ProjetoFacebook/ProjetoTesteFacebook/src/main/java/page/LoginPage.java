@@ -20,7 +20,8 @@ public class LoginPage extends BasePage {
 		return dsl.obterValorCampo("pass");
 	}
 	public void cadastrar() {
-		dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[2]/button"));
+//		dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[2]/button"));
+		dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div[2]/div[2]/form/div/div[3]/button"));
 	}
 	
 

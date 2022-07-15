@@ -4,19 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 import drivers.DriverFactory;
 
-import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 // https://www.selenium.dev/documentation/pt-br/guidelines_and_recommendations/domain_specific_language/
 
 public class DSL {
+
+	private void wait(By by) {
+		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), DriverProperty.WAIT_TIME);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+	}
 		
 	// TextFields e TextAreas
 	public void escrever(By by, String texto){
+		wait(by);
 		DriverFactory.getDriver().findElement(by).clear();
 		DriverFactory.getDriver().findElement(by).sendKeys(texto);
 	}
@@ -29,6 +36,7 @@ public class DSL {
 	}
 	
 	public String obterValorCampo(String idCampo) {
+		wait(By.id((idCampo)));
 		return DriverFactory.getDriver().findElement(By.id(idCampo)).getAttribute("value");
 	}
 
