@@ -34,7 +34,7 @@ public class PrincipalFacebook extends BaseTest {
 
     @Before
     public void inicializar() {
-        DriverFactory.getDriver().get("http://pt-br.facebook.com/");
+        DriverFactory.getDriver().get("https://www.facebook.com/login/");
         page = new LoginPage();
         principalPage = new PrincipalPage();
         dsl = new DSL();
@@ -58,8 +58,8 @@ public class PrincipalFacebook extends BaseTest {
         page.setSenha(senha);
         page.cadastrar();
         principalPage.abrirCadastroPublicacao();
-//        principalPage.escreverPublicacao();
-//        principalPage.clicarTextoCadastroPublicacao();
-//        principalPage.escreverCadastroPublicacao();
+        principalPage.clicarTextoCadastroPublicacao();
+        principalPage.escreverPublicacao("Vou testar a postagem agora!");
+//        principalPage.escreverRestoPublicacao("ou testar a postagem agora!");
     }
 }

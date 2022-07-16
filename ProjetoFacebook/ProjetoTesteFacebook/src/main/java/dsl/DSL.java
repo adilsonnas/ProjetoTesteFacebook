@@ -24,7 +24,7 @@ public class DSL {
 	// TextFields e TextAreas
 	public void escrever(By by, String texto){
 		wait(by);
-		DriverFactory.getDriver().findElement(by).clear();
+//		DriverFactory.getDriver().findElement(by).clear();
 		DriverFactory.getDriver().findElement(by).sendKeys(texto);
 	}
 	public void escrever(String idCampo, String texto){
@@ -102,6 +102,7 @@ public class DSL {
 		DriverFactory.getDriver().findElement(By.id(id)).click();
 	}
 	public void clicarBotaoXpath(By by) {
+		wait(by);
 		DriverFactory.getDriver().findElement(by).click();
 	}
 	
