@@ -20,7 +20,12 @@ public class DSL {
 		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), DriverProperty.WAIT_TIME);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
-		
+
+	private void waitClickable(By by) {
+		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), DriverProperty.WAIT_TIME);
+		wait.until((ExpectedConditions.elementToBeClickable(by)));
+	}
+
 	// TextFields e TextAreas
 	public void escrever(By by, String texto){
 		wait(by);
@@ -105,7 +110,7 @@ public class DSL {
 		wait(by);
 		DriverFactory.getDriver().findElement(by).click();
 	}
-	
+
 	// Links
 	public void clicarLink(String link) {
 		DriverFactory.getDriver().findElement(By.linkText(link)).click();
@@ -126,6 +131,10 @@ public class DSL {
 	
 	public String obterClasse(String classe) {
 		return DriverFactory.getDriver().findElement(By.tagName(classe)).getText();
+	}
+
+	public String obterElemento(By by) {
+		return DriverFactory.getDriver().findElement(by).getText();
 	}
 
     // Alertas 
