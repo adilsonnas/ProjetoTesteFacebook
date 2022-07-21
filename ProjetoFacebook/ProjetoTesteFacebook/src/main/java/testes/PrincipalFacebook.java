@@ -58,7 +58,7 @@ public class PrincipalFacebook extends BaseTest {
         principalPage.clicarReticencias();
         principalPage.clicarMoverLixeira();
         principalPage.clicarBotaoMover();
-       Assert.assertTrue(principalPage.excluiPublicação().contains("Movendo a publicação para a Lixeira"));
+       Assert.assertTrue(principalPage.excluiPublicacao().contains("Movendo a publicaÃ§Ã£o para a Lixeira"));
 
     }
 }

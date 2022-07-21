@@ -24,7 +24,7 @@ public class PrincipalPage extends BasePage {
         dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div/div[1]/div/div/div[1]/div/div/div[1]/ul/li/div/a"));
     }
     
-    public String excluiPublicação() {
+    public String excluiPublicacao() {
         return dsl.obterElemento(By.xpath("/html/body/div[6]/ul"));
     }
     

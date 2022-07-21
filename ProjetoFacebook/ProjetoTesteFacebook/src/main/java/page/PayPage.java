@@ -12,7 +12,7 @@ public class PayPage extends BasePage {
         dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[2]/div[4]/div[2]/div/div/div[1]/div[1]/div/div/div/div/div/div/div/div/div[1]/div/div/div[1]/div[2]/div/div[1]/div/div[1]/div[2]/div[1]"));
     }
 	
-	public void clicarConfigurações() {
+	public void clicarConfiguracoes() {
         dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[2]/div[4]/div[2]/div/div/div[1]/div[1]/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[1]/a/div[1]/div[2]/div"));
     }
 	
@@ -25,10 +25,10 @@ public class PayPage extends BasePage {
     } //html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div[2]/div/div[18]/a/div[1]/div[2]/div
 	
 	public void clicarConfigPay() {
-        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[1]/div/div[2]/div[1]/div[2]/div[4]/div/a/div[1]/div[2]/div"));
+        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div[2]/div/div[15]"));
     }
 	
-	public void clicarEndereço() {
+	public void clicarEndereco() {
         dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[2]/div/div/div[1]/div[1]/div/div/div/div/div/div[2]/div/div/div[1]/div/div"));
     }
 
