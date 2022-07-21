@@ -7,7 +7,6 @@ import drivers.DriverFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,6 +20,7 @@ public class DSL {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 
+	@SuppressWarnings("unused")
 	private void waitClickable(By by) {
 		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), DriverProperty.WAIT_TIME);
 		wait.until((ExpectedConditions.elementToBeClickable(by)));
@@ -29,7 +29,7 @@ public class DSL {
 	// TextFields e TextAreas
 	public void escrever(By by, String texto){
 		wait(by);
-//		DriverFactory.getDriver().findElement(by).clear();
+		DriverFactory.getDriver().findElement(by).clear();
 		DriverFactory.getDriver().findElement(by).sendKeys(texto);
 	}
 	public void escrever(String idCampo, String texto){
@@ -110,6 +110,12 @@ public class DSL {
 		wait(by);
 		DriverFactory.getDriver().findElement(by).click();
 	}
+	
+	public void clicarBotaoXpath1(By by) {
+		wait(by);
+		DriverFactory.getDriver().findElement(by).click();
+	}
+
 
 	// Links
 	public void clicarLink(String link) {
@@ -134,6 +140,7 @@ public class DSL {
 	}
 
 	public String obterElemento(By by) {
+		wait(by);
 		return DriverFactory.getDriver().findElement(by).getText();
 	}
 

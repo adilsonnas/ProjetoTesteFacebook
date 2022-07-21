@@ -48,12 +48,12 @@ public class LoginFacebook {
 	@Parameters
 	public static Collection<Object[]> getCollection() {
 		return Arrays.asList(new Object[][] {
-				{"","lgrwu137331","O email ou o nÃºmero de celular que vocÃª inseriu nÃ£o estÃ¡ conectado a uma conta. Encontre sua conta e entre."},
-				{"123456abcdefg@tfbnw.net","lgrwu137331","O email que vocÃª inseriu nÃ£o estÃ¡ conectado a uma conta. Encontre sua conta e entre."},
-				{"","","O email ou o nÃºmero de celular que vocÃª inseriu nÃ£o estÃ¡ conectado a uma conta. Encontre sua conta e entre."},
-				{"gvbnqzi_romanberg_1629413798@tfbnw.net","","A senha inserida estÃ¡ incorreta. Esqueceu a senha?"},
-				{"gvbnqzi_romanberg_1629413798@tfbnw.net","123456abc","A senha inserida estÃ¡ incorreta. Esqueceu a senha?"},
-				{"gvbnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331","No que vocÃª estÃ¡ pensando, Michael?"}
+				{"","lgrwu137331","O email ou o número de celular que você inseriu não está conectado a uma conta. Encontre sua conta e entre."},
+				{"123456abcdefg@tfbnw.net","lgrwu137331","O email que você inseriu não está conectado a uma conta. Encontre sua conta e entre."},
+				{"","","O email ou o número de celular que você inseriu não está conectado a uma conta. Encontre sua conta e entre."},
+				{"gvbnqzi_romanberg_1629413798@tfbnw.net","","A senha inserida está incorreta. Esqueceu a senha?"},
+				{"gvbnqzi_romanberg_1629413798@tfbnw.net","123456abc","A senha inserida está incorreta. Esqueceu a senha?"},
+				{"gvbnqzi_romanberg_1629413798@tfbnw.net","lgrwu137331","No que você está pensando, Michael?"}
 		});
 	}
 	

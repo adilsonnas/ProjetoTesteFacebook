@@ -40,16 +40,16 @@ public class PrincipalFacebook extends BaseTest {
     public void deveEscreverPublicacao() {
         principalPage.abrirCadastroPublicacao();
         principalPage.clicarTextoCadastroPublicacao();
-        principalPage.escreverPublicacao("AB");
+        principalPage.escreverPublicacao("@");
         principalPage.clicarPublicarPublicacao();
-//        principalPage.clicarAbrirPerfil();
+        Assert.assertTrue(dsl.obterClasse("body").contains("@"));
     }
 
     @Test
     public void deveCurtirPublicacao() {
         principalPage.clicarAbrirPerfil();
         principalPage.curtirPublicacao();
-         Assert.assertTrue(principalPage.nomePublicacaoCurtida().contains("Michael Alfbfhiggfhif Romanberg"));
+        Assert.assertTrue(principalPage.nomePublicacaoCurtida().contains("Michael Alfbfhiggfhif Romanberg"));
     }
 
     @Test
@@ -58,5 +58,7 @@ public class PrincipalFacebook extends BaseTest {
         principalPage.clicarReticencias();
         principalPage.clicarMoverLixeira();
         principalPage.clicarBotaoMover();
+       Assert.assertTrue(principalPage.excluiPublicação().contains("Movendo a publicação para a Lixeira"));
+
     }
 }

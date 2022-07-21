@@ -17,7 +17,7 @@ public class DriverFactory {
 
 			FirefoxOptions options = new FirefoxOptions();
 //			options.addArguments("--headless");
-			driver = new FirefoxDriver();
+//			driver = new FirefoxDriver();
 			driver = new FirefoxDriver(options);
 		}
 		return driver;
