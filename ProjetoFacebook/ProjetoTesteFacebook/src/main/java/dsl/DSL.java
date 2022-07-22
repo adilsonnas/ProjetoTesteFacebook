@@ -36,8 +36,8 @@ public class DSL {
 		escrever(By.id(idCampo), texto);
 	}
 	
-	public void escreverXpath(By by, String texto) {
-		escrever(By.xpath(texto), texto);
+	public void escreverXpath(String xpath, String texto) {
+		escrever(By.xpath(xpath), texto);
 	}
 	
 	public String obterValorCampo(String idCampo) {

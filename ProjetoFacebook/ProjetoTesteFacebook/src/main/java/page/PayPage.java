@@ -4,32 +4,39 @@ import org.openqa.selenium.By;
 
 public class PayPage extends BasePage {
 	
-	public void clicarPerfil() {
-        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[2]/div[4]/div[1]/span/div/div[1]"));
+	public void clicarAdicionarEndereco() {
+        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[2]/div/div/div[1]/div[1]/div/div/div/div/div/div[2]/div"));
     } 
 	
-	public void clicarConfigPrivacidade() {
-        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[2]/div[4]/div[2]/div/div/div[1]/div[1]/div/div/div/div/div/div/div/div/div[1]/div/div/div[1]/div[2]/div/div[1]/div/div[1]/div[2]/div[1]"));
-    }
-	
-	public void clicarConfiguracoes() {
-        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[2]/div[4]/div[2]/div/div/div[1]/div[1]/div/div/div/div/div/div/div/div/div[2]/div/div[2]/div/div[1]/a/div[1]/div[2]/div"));
-    }
-	
-	public void clicarBarra() {
-        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[1]/div/div[3]/div[2]"));
-    }
-	
-	public void clicarFacePay() {
-        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div[2]/div/div[18]/a/div[1]/div[2]/div/div"));
-    } //html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div[2]/div/div[18]/a/div[1]/div[2]/div
-	
-	public void clicarConfigPay() {
-        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div[2]/div/div[15]"));
-    }
-	
-	public void clicarEndereco() {
-        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[2]/div/div/div[1]/div[1]/div/div/div/div/div/div[2]/div/div/div[1]/div/div"));
+	public void escreverNomeEndereco(String texto) {
+        dsl.escreverXpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[1]/label/div/div[1]/input", texto);
     }
 
+    public void escreverNomeCompleto(String texto) {
+        dsl.escreverXpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[3]/label/div/div/input", texto);
+    }
+
+    public void escreverNomeRua(String texto) {
+        dsl.escreverXpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[5]/label/div/div/input", texto);
+    }
+
+    public void escreverTipoEndereco(String texto) {
+        dsl.escreverXpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[7]/label/div/div/input", texto);
+    }
+
+    public void escreverCidade(String texto) {
+        dsl.escreverXpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[9]/label/div/div/input", texto);
+    }
+
+    public void escreverEstado(String texto) {
+        dsl.escreverXpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[11]/div[1]/div/label/div/div/input", texto);
+    }
+
+    public void escreverCEP(String texto) {
+        dsl.escreverXpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[11]/div[2]/div/label/div/div/input", texto);
+    }
+
+    public void clicarSalvarEndereco() {
+        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[4]/div/div[2]/div[1]"));
+	}
 }
