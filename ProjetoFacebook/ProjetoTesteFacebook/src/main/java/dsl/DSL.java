@@ -135,9 +135,14 @@ public class DSL {
 		return DriverFactory.getDriver().getTitle();
 	}
 	
-	public String obterClasse(String classe) {
+	public String obterTextoElemento(String classe) {
 //		wait(By.tagName(classe));
 		return DriverFactory.getDriver().findElement(By.tagName(classe)).getText();
+	}
+
+	public String obterTextoElemento(By by) {
+		wait(by);
+		return DriverFactory.getDriver().findElement(by).getText();
 	}
 
 	public String obterElemento(By by) {

@@ -5,19 +5,11 @@ import dsl.DSL;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import page.BaseTest;
 import page.LoginPage;
 import page.PrincipalPage;
-
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collection;
 
 public class PrincipalFacebook extends BaseTest {
     private LoginPage page;
@@ -42,7 +34,7 @@ public class PrincipalFacebook extends BaseTest {
         principalPage.clicarTextoCadastroPublicacao();
         principalPage.escreverPublicacao("@");
         principalPage.clicarPublicarPublicacao();
-        Assert.assertTrue(dsl.obterClasse("body").contains("@"));
+        Assert.assertTrue(dsl.obterTextoElemento("body").contains("@"));
     }
 
     @Test

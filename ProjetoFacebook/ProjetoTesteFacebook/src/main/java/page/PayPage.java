@@ -103,5 +103,31 @@ public class PayPage extends BasePage {
 	public void validaRemover() {
 		dsl.obterElemento(By.xpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div[1]/label/div/div[1]/input"));
 	}
-    
+
+	public String validarTextoCadastroEndereco(int codigo) {
+	    if(codigo == 1) {
+	        return dsl.obterTextoElemento(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[2]/div/div/div[1]/div[1]/div/div/div/div/div/div[2]/div[1]/div[1]/div/div[1]/div/div[1]/div/div/div[1]/span"));
+        } else if(codigo == 2) {
+	        return dsl.obterTextoElemento(By.xpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div/div/div/div[2]/div/div[1]/span/span"));
+        } else if(codigo == 3) {
+        return dsl.obterTextoElemento(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[2]/div/div/div[1]/div[1]/div/div/div/div/div"));
+    }
+	    return null;
+    }
+
+    public String validarTextoCadastroEmail(int codigo) {
+        if(codigo == 1) {
+            return dsl.obterTextoElemento(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[2]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[1]/div[1]/div/div[1]/div/div[1]/div/div/div/span"));
+        }
+        return null;
+    }
+
+    public String validarTextoCadastroTelefone(int codigo) {
+        if(codigo == 1) {
+            return dsl.obterTextoElemento(By.xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div[2]/div/div/div[1]/div[3]/div/div/div/div/div/div[2]/div[1]/div[1]/div/div[1]/div/div[1]/div/div/div/span"));
+        }
+        return null;
+    }
+
+
 }
