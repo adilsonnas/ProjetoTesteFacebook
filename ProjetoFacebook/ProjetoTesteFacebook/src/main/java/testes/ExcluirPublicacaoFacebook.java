@@ -1,14 +1,18 @@
 package testes;
 
 import drivers.DriverFactory;
+import drivers.DriverUtils;
 import dsl.DSL;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import page.BaseTest;
 import page.LoginPage;
 import page.PrincipalPage;
 
-public class ExcluirPublicacaoFacebook {
+import java.io.IOException;
+
+public class ExcluirPublicacaoFacebook extends BaseTest {
     private LoginPage page;
     private PrincipalPage principalPage;
     private DSL dsl;
@@ -29,11 +33,12 @@ public class ExcluirPublicacaoFacebook {
     }
 
     @Test
-    public void deveExcluirPublicacao() {
+    public void deveExcluirPublicacao() throws IOException {
         principalPage.clicarAbrirPerfil();
         principalPage.clicarReticencias();
         principalPage.clicarMoverLixeira();
         principalPage.clicarBotaoMover();
+        DriverUtils.takesScreenshot(testName.getMethodName());
         Assert.assertTrue(dsl.obterTextoElemento("body").contains("@"));
     }
 }

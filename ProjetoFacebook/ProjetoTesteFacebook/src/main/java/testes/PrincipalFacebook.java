@@ -1,6 +1,7 @@
 package testes;
 
 import drivers.DriverFactory;
+import drivers.DriverUtils;
 import dsl.DSL;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,6 +11,8 @@ import org.openqa.selenium.WebDriver;
 import page.BaseTest;
 import page.LoginPage;
 import page.PrincipalPage;
+
+import java.io.IOException;
 
 public class PrincipalFacebook extends BaseTest {
     private LoginPage page;
@@ -33,11 +36,12 @@ public class PrincipalFacebook extends BaseTest {
     }
 
     @Test
-    public void deveEscreverPublicacao() {
+    public void deveEscreverPublicacao() throws IOException {
         principalPage.abrirCadastroPublicacao();
         principalPage.clicarTextoCadastroPublicacao();
         principalPage.escreverPublicacao("@");
         principalPage.clicarPublicarPublicacao();
+        DriverUtils.takesScreenshot(testName.getMethodName());
         Assert.assertTrue(dsl.obterTextoElemento("body").contains("@"));
     }
 }

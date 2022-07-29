@@ -16,17 +16,9 @@ public class DriverFactory {
 			System.setProperty("webdriver.gecko.driver", GECKO_DRIVER_PATH);
 
 			FirefoxOptions options = new FirefoxOptions();
-//			options.addArguments("--headless");
-//			driver = new FirefoxDriver();
+			options.addArguments("--headless");
 			driver = new FirefoxDriver(options);
 		}
 		return driver;
 	}
-
-//	public static void killDriver() {
-//		if (driver != null) {
-//			driver.quit();
-//			driver = null;
-//		}
-//	}
 }

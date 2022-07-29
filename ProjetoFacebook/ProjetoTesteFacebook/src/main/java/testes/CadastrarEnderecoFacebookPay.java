@@ -1,7 +1,9 @@
 package testes;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
+import drivers.DriverUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,11 +13,12 @@ import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 import drivers.DriverFactory;
 import dsl.DSL;
+import page.BaseTest;
 import page.LoginPage;
 import page.PayPage;
 
 @RunWith(Parameterized.class)
-public class CadastrarEnderecoFacebookPay {
+public class CadastrarEnderecoFacebookPay extends BaseTest {
 	
     private LoginPage page;
     private PayPage payPage;
@@ -74,7 +77,7 @@ public class CadastrarEnderecoFacebookPay {
 	}
 	
 	@Test
-	public void deveCadastrarEnderecoFacebookPay() {
+	public void deveCadastrarEnderecoFacebookPay() throws IOException {
         payPage.clicarAdicionarEndereco();
         payPage.escreverNomeEndereco(nomeEndereco);
         payPage.escreverNomeCompleto(nomecompleto);
@@ -85,6 +88,7 @@ public class CadastrarEnderecoFacebookPay {
         payPage.escreverCEP(cep);
         payPage.clicarSalvarEndereco();
         String texto = payPage.validarTextoCadastroEndereco(codigoTeste);
-        Assert.assertTrue(texto.equals(mensagemTeste));
+		DriverUtils.takesScreenshot(testName.getMethodName());
+		Assert.assertTrue(texto.equals(mensagemTeste));
 	}
 }

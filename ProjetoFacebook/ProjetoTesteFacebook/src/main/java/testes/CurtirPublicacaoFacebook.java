@@ -1,14 +1,17 @@
 package testes;
 
 import drivers.DriverFactory;
-import dsl.DSL;
+import drivers.DriverUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import page.BaseTest;
 import page.LoginPage;
 import page.PrincipalPage;
 
-public class CurtirPublicacaoFacebook {
+import java.io.IOException;
+
+public class CurtirPublicacaoFacebook extends BaseTest {
     private LoginPage page;
     private PrincipalPage principalPage;
 
@@ -27,9 +30,10 @@ public class CurtirPublicacaoFacebook {
     }
 
     @Test
-    public void deveCurtirPublicacao() {
+    public void deveCurtirPublicacao() throws IOException {
         principalPage.clicarAbrirPerfil();
         principalPage.curtirPublicacao();
+        DriverUtils.takesScreenshot(testName.getMethodName());
         Assert.assertTrue(principalPage.nomePublicacaoCurtida().contains("Michael Alfbfhiggfhif Romanberg"));
     }
 }

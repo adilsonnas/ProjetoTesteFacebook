@@ -1,7 +1,10 @@
 package testes;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
+
+import drivers.DriverUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,10 +15,11 @@ import org.junit.runners.Parameterized.Parameters;
 import drivers.DriverFactory;
 import dsl.DSL;
 import org.openqa.selenium.WebDriver;
+import page.BaseTest;
 import page.LoginPage;
 
 @RunWith(Parameterized.class)
-public class LoginFacebook {
+public class LoginFacebook extends BaseTest {
 
 	private LoginPage page;
 	private DSL dsl;
@@ -49,10 +53,11 @@ public class LoginFacebook {
 	}
 	
 	@Test
-	public void deveValidarLoginFace() {
+	public void deveValidarLoginFace() throws IOException {
 		page.setEmail(email);
 		page.setSenha(senha);
 		page.cadastrar();
+		DriverUtils.takesScreenshot(testName.getMethodName());
 		Assert.assertTrue(dsl.obterTextoElemento("body").contains(msg));
 	}
 }

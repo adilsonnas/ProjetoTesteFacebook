@@ -1,14 +1,18 @@
 package testes;
 
 import drivers.DriverFactory;
+import drivers.DriverUtils;
 import dsl.DSL;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import page.BaseTest;
 import page.LoginPage;
 import page.PayPage;
 
-public class CadastrarTelefoneFacebookPay {
+import java.io.IOException;
+
+public class CadastrarTelefoneFacebookPay extends BaseTest {
 
     private LoginPage page;
     private PayPage payPage;
@@ -33,11 +37,12 @@ public class CadastrarTelefoneFacebookPay {
     }
 
     @Test
-    public void deveCadastrarFoneFacebookPay() {
+    public void deveCadastrarFoneFacebookPay() throws IOException {
         payPage.clicarAdicionarFone();
         payPage.escreverFone("51999998888");
         payPage.clicarSalvarFone();
         String texto = payPage.validarTextoCadastroTelefone(1);
+        DriverUtils.takesScreenshot(testName.getMethodName());
         Assert.assertTrue(texto.equals("+51999998888"));
     }
 }
