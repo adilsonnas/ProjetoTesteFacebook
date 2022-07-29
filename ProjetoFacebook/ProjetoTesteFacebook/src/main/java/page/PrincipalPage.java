@@ -52,6 +52,6 @@ public class PrincipalPage extends BasePage {
     }
 
     public void clicarBotaoMover() {
-        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div[4]/div/div[2]/div[1]"));
+        dsl.clicarBotaoXpath(By.xpath("/html/body/div[1]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/div[3]/div/div/div/div[1]/div"));
     }
 }
