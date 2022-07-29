@@ -5,16 +5,12 @@ import dsl.DSL;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-
-import page.BaseTest;
 import page.LoginPage;
 import page.PrincipalPage;
 
-public class PrincipalFacebook extends BaseTest {
+public class ExcluirPublicacaoFacebook {
     private LoginPage page;
     private PrincipalPage principalPage;
-    private WebDriver driver;
     private DSL dsl;
 
     @Before
@@ -33,11 +29,11 @@ public class PrincipalFacebook extends BaseTest {
     }
 
     @Test
-    public void deveEscreverPublicacao() {
-        principalPage.abrirCadastroPublicacao();
-        principalPage.clicarTextoCadastroPublicacao();
-        principalPage.escreverPublicacao("@");
-        principalPage.clicarPublicarPublicacao();
+    public void deveExcluirPublicacao() {
+        principalPage.clicarAbrirPerfil();
+        principalPage.clicarReticencias();
+        principalPage.clicarMoverLixeira();
+        principalPage.clicarBotaoMover();
         Assert.assertTrue(dsl.obterTextoElemento("body").contains("@"));
     }
 }

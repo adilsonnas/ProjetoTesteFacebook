@@ -2,10 +2,13 @@ package testes;
 
 import drivers.DriverFactory;
 import dsl.DSL;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import page.LoginPage;
 import page.PayPage;
+
+import java.util.concurrent.TimeUnit;
 
 public class ExcluirEnderecoFacebookPay {
 	
@@ -33,11 +36,12 @@ public class ExcluirEnderecoFacebookPay {
 
 
 	@Test
-	public void deveExcluirCadastroFacebookPay() {
+	public void deveExcluirCadastroEnderecoFacebookPay() {
 		payPage.clicarEditarCadastro();
 		payPage.clicarRemoverCadastro();
 		payPage.clicarConfirmaRemoverCadastro();
-//		String texto = payPage.validarTextoCadastroEndereco(3);
-//		Assert.assertFalse(texto.contains("Meu endereco"));
+		DriverFactory.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		String texto = payPage.validarTextoCadastroEndereco(3);
+		Assert.assertFalse(texto.contains("Meu endereco"));
 	}
 }

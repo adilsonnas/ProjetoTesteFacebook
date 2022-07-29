@@ -2,6 +2,8 @@ package dsl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import drivers.DriverFactory;
 
 import org.openqa.selenium.Alert;
@@ -20,10 +22,8 @@ public class DSL {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 
-	@SuppressWarnings("unused")
-	private void waitClickable(By by) {
-		WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), DriverProperty.WAIT_TIME);
-		wait.until((ExpectedConditions.elementToBeClickable(by)));
+	public void waitTeste() {
+		DriverFactory.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	// TextFields e TextAreas

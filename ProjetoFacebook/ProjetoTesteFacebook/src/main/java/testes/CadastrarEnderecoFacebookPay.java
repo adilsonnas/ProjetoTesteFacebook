@@ -74,7 +74,7 @@ public class CadastrarEnderecoFacebookPay {
 	}
 	
 	@Test
-	public void deveCadastrarFacebookPay() {
+	public void deveCadastrarEnderecoFacebookPay() {
         payPage.clicarAdicionarEndereco();
         payPage.escreverNomeEndereco(nomeEndereco);
         payPage.escreverNomeCompleto(nomecompleto);

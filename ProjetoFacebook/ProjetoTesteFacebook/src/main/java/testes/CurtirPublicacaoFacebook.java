@@ -5,17 +5,12 @@ import dsl.DSL;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-
-import page.BaseTest;
 import page.LoginPage;
 import page.PrincipalPage;
 
-public class PrincipalFacebook extends BaseTest {
+public class CurtirPublicacaoFacebook {
     private LoginPage page;
     private PrincipalPage principalPage;
-    private WebDriver driver;
-    private DSL dsl;
 
     @Before
     public void inicializar() {
@@ -23,7 +18,6 @@ public class PrincipalFacebook extends BaseTest {
         String teste = DriverFactory.getDriver().getCurrentUrl();
         page = new LoginPage();
         principalPage = new PrincipalPage();
-        dsl = new DSL();
         if(teste.equalsIgnoreCase("https://www.facebook.com/home.php")) {
             return;
         }
@@ -33,11 +27,9 @@ public class PrincipalFacebook extends BaseTest {
     }
 
     @Test
-    public void deveEscreverPublicacao() {
-        principalPage.abrirCadastroPublicacao();
-        principalPage.clicarTextoCadastroPublicacao();
-        principalPage.escreverPublicacao("@");
-        principalPage.clicarPublicarPublicacao();
-        Assert.assertTrue(dsl.obterTextoElemento("body").contains("@"));
+    public void deveCurtirPublicacao() {
+        principalPage.clicarAbrirPerfil();
+        principalPage.curtirPublicacao();
+        Assert.assertTrue(principalPage.nomePublicacaoCurtida().contains("Michael Alfbfhiggfhif Romanberg"));
     }
 }
