@@ -34,7 +34,6 @@ public class ExcluirPublicacaoFacebook extends BaseTest {
 
     @Test
     public void deveExcluirPublicacao() throws IOException {
-        principalPage.clicarAbrirPerfil();
         principalPage.clicarReticencias();
         principalPage.clicarMoverLixeira();
         principalPage.clicarBotaoMover();

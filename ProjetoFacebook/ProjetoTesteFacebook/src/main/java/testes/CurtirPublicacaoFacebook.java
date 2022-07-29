@@ -31,7 +31,6 @@ public class CurtirPublicacaoFacebook extends BaseTest {
 
     @Test
     public void deveCurtirPublicacao() throws IOException {
-        principalPage.clicarAbrirPerfil();
         principalPage.curtirPublicacao();
         DriverUtils.takesScreenshot(testName.getMethodName());
         Assert.assertTrue(principalPage.nomePublicacaoCurtida().contains("Michael Alfbfhiggfhif Romanberg"));
